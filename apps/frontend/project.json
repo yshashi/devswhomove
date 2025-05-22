@@ -1,5 +1,5 @@
 {
-  "name": "devswhorun",
+  "name": "devswhorun-frontend",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
@@ -9,7 +9,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "devswhorun:build"
+        "buildTarget": "devswhorun-frontend:build"
       }
     },
     "lint": {
@@ -19,7 +19,7 @@
       "continuous": true,
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "devswhorun:build",
+        "buildTarget": "devswhorun-frontend:build",
         "port": 4200,
         "spa": true
       }
