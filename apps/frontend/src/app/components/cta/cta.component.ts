@@ -3,8 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-cta',
   template: `
-    <section class="relative py-20 bg-gradient-to-br from-blue-600 to-indigo-700 dark:from-blue-800 dark:to-indigo-900">
-      <div class="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]"></div>
+    <section
+      class="relative py-20 bg-gradient-to-br from-blue-600 to-indigo-700 dark:from-blue-800 dark:to-indigo-900"
+    >
+      <div
+        class="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]"
+      ></div>
       <div class="relative px-4 mx-auto max-w-7xl text-center sm:px-6 lg:px-8">
         <h2 class="mb-8 text-3xl font-extrabold text-white sm:text-4xl">
           Ready to Join Our Community?
@@ -33,6 +37,6 @@ import { Component } from '@angular/core';
         </a>
       </div>
     </section>
-  `
+  `,
 })
 export class CtaComponent {}

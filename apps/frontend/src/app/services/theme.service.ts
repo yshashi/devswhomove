@@ -2,7 +2,7 @@ import { Injectable, signal, effect, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ThemeService {
   isDarkMode = signal(false);
@@ -12,7 +12,7 @@ export class ThemeService {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     this.isDarkMode.set(mediaQuery.matches);
 
-    mediaQuery.addEventListener('change', e => {
+    mediaQuery.addEventListener('change', (e) => {
       this.isDarkMode.set(e.matches);
       this.updateDocumentClass();
     });
@@ -23,7 +23,7 @@ export class ThemeService {
   }
 
   toggleTheme() {
-    this.isDarkMode.update(value => !value);
+    this.isDarkMode.update((value) => !value);
   }
 
   private updateDocumentClass() {

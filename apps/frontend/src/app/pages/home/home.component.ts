@@ -17,7 +17,7 @@ import { ThemeService } from '../../services/theme.service';
     TestimonialsComponent,
     FeaturesComponent,
     FooterComponent,
-    ThemeButtonComponent
+    ThemeButtonComponent,
   ],
   template: `
     <div
@@ -32,7 +32,7 @@ import { ThemeService } from '../../services/theme.service';
       <app-cta></app-cta>
       <app-footer></app-footer>
     </div>
-  `
+  `,
 })
 export class HomeComponent {
   themeService = inject(ThemeService);
