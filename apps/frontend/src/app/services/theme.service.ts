@@ -9,13 +9,15 @@ export class ThemeService {
   private readonly document = inject(DOCUMENT);
 
   constructor() {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    this.isDarkMode.set(mediaQuery.matches);
+    if (window !== undefined) {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      this.isDarkMode.set(mediaQuery.matches);
 
-    mediaQuery.addEventListener('change', (e) => {
-      this.isDarkMode.set(e.matches);
-      this.updateDocumentClass();
-    });
+      mediaQuery.addEventListener('change', (e) => {
+        this.isDarkMode.set(e.matches);
+        this.updateDocumentClass();
+      });
+    }
 
     effect(() => {
       this.updateDocumentClass();
