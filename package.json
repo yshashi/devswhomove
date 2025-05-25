@@ -2,7 +2,9 @@
   "name": "@devswhorun/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "nx": "nx"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~19.2.0",
