@@ -31,4 +31,5 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v4
 
-      - uses: ./.github/actions/nx-build
+      - name: Run build and test
+        uses: ./.github/actions/nx-build

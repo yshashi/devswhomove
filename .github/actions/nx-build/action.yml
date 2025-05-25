@@ -4,6 +4,8 @@ runs:
   using: 'composite'
   steps:
     - name: run format check
+      shell: bash
       run: npx nx format:check
     - name: run affected lint, test, and build
+      shell: bash
       run: npx nx affected -t lint test build
