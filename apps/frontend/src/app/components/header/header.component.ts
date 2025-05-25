@@ -108,7 +108,7 @@ type DiscordStats = {
               </svg>
             </a>
             <a
-              href="https://github.com/Devs-Who-Run/devs-who-run"
+              href="https://github.com/devs-who-run/devswhomove"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Contribute on GitHub"

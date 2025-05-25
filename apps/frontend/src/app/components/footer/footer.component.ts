@@ -59,7 +59,7 @@ import { Component, signal } from '@angular/core';
               </li>
               <li>
                 <a
-                  href="https://github.com/Devs-Who-Run/devs-who-run"
+                  href="https://github.com/devs-who-run/devswhomove"
                   class="inline-flex gap-1 items-center transition-colors hover:text-white"
                   target="_blank"
                   rel="noopener noreferrer"
