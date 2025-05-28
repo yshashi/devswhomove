@@ -19,14 +19,13 @@ import { CtaComponent } from '../../components/cta/cta.component';
     ThemeButtonComponent,
   ],
   template: `
-      <app-theme-button></app-theme-button>
-      <app-header></app-header>
-      <app-about></app-about>
-      <app-features></app-features>
-      <app-testimonials></app-testimonials>
-      <app-cta></app-cta>
-      <app-footer></app-footer>
+    <app-theme-button></app-theme-button>
+    <app-header></app-header>
+    <app-about></app-about>
+    <app-features></app-features>
+    <app-testimonials></app-testimonials>
+    <app-cta></app-cta>
+    <app-footer></app-footer>
   `,
 })
-export class HomeComponent {
-}
+export class HomeComponent {}

@@ -132,7 +132,11 @@ type DiscordStats = {
             </a>
           </div> -->
           <div class="mt-6 mb-4">
-            <h3 class="mb-4 text-xl font-semibold text-gray-800 dark:text-gray-200">Become our member</h3>
+            <h3
+              class="mb-4 text-xl font-semibold text-gray-800 dark:text-gray-200"
+            >
+              Become our member
+            </h3>
             <app-social-login />
           </div>
         </div>
