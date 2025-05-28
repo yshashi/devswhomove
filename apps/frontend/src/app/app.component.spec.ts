@@ -16,15 +16,12 @@ describe('AppComponent', () => {
 
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
-      value: mockMatchMedia
+      value: mockMatchMedia,
     });
 
     await TestBed.configureTestingModule({
       imports: [AppComponent, RouterModule.forRoot([])],
-      providers: [
-        ThemeService,
-        { provide: PLATFORM_ID, useValue: 'browser' }
-      ],
+      providers: [ThemeService, { provide: PLATFORM_ID, useValue: 'browser' }],
     }).compileComponents();
   });
 
