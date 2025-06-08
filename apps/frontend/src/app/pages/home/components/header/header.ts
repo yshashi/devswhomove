@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { SocialLoginComponent } from '../social-login/social-login.component';
+import { SocialLogin } from '../social-login/social-login';
 
 type DiscordStats = {
   total_members: number;
@@ -8,8 +8,7 @@ type DiscordStats = {
 
 @Component({
   selector: 'app-header',
-  standalone: true,
-  imports: [SocialLoginComponent],
+  imports: [SocialLogin],
   template: `
     <header
       class="overflow-hidden relative bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800"
@@ -144,7 +143,7 @@ type DiscordStats = {
     </header>
   `,
 })
-export class HeaderComponent {
+export class Header {
   discordStats = signal<DiscordStats>({
     total_members: 99,
     online_members: 7,

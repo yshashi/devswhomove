@@ -39,4 +39,4 @@ import { Component } from '@angular/core';
     </section>
   `,
 })
-export class CtaComponent {}
+export class Cta {}

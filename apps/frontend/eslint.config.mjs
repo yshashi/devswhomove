@@ -14,6 +14,7 @@ export default [
           type: 'attribute',
           prefix: 'app',
           style: 'camelCase',
+          suffix: '',
         },
       ],
       '@angular-eslint/component-selector': [
@@ -22,6 +23,7 @@ export default [
           type: 'element',
           prefix: 'app',
           style: 'kebab-case',
+          suffix: '',
         },
       ],
     },

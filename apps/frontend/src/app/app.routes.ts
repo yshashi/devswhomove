@@ -4,7 +4,7 @@ export const appRoutes: Route[] = [
   {
     path: '',
     loadComponent: () =>
-      import('./pages/home/home.component').then((m) => m.HomeComponent),
+      import('./pages/home/home')
   },
   { path: 'home', redirectTo: '', pathMatch: 'full' },
   { path: '**', redirectTo: '' },
