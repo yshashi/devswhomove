@@ -31,7 +31,10 @@ export class SvgIconDirective implements OnInit {
     const doc = parser.parseFromString(svgString, 'image/svg+xml');
     const parseError = doc.querySelector('parsererror');
     if (parseError) {
-      console.error(`Failed to parse SVG for icon: ${this.iconName()}`, parseError);
+      console.error(
+        `Failed to parse SVG for icon: ${this.iconName()}`,
+        parseError
+      );
       return;
     }
     const svgElement = doc.documentElement;
