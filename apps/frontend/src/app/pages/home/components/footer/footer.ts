@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { SvgIcon } from 'apps/frontend/src/app/shared/directives';
-import { ICON_NAME } from 'apps/frontend/src/app/shared/directives/svg';
+import { ICON_NAME } from '../../../../shared/directives/svg';
+import { SvgIconDirective } from '../../../../shared/directives/svg/svg-icon';
 
 @Component({
   selector: 'app-footer',
-  imports: [SvgIcon],
+  imports: [SvgIconDirective],
   template: `
     <footer class="py-12 text-gray-300 bg-gray-900">
       <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -91,7 +91,7 @@ import { ICON_NAME } from 'apps/frontend/src/app/shared/directives/svg';
     <span appSvgIcon iconName="smile" iconClass="hidden"></span>
   `,
 })
-export class Footer {
+export class FooterComponent {
   protected readonly iconName = ICON_NAME;
   protected readonly currentYear = signal(new Date().getFullYear());
 }

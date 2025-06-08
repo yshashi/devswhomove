@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { AboutDetail } from '../../types.';
+import { AboutDetail } from '../../types';
 
 @Component({
   selector: 'app-about',
@@ -46,6 +46,6 @@ import { AboutDetail } from '../../types.';
     </section>
   `,
 })
-export class About {
+export class AboutComponent {
   aboutDetails = input<AboutDetail[]>();
 }

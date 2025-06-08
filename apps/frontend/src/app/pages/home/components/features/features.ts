@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Feature } from '../../types.';
+import { Feature } from '../../types';
 
 @Component({
   selector: 'app-features',
@@ -39,6 +39,6 @@ import { Feature } from '../../types.';
     </section>
   `,
 })
-export class Features {
+export class FeaturesComponent {
   features = input<Feature[]>();
 }

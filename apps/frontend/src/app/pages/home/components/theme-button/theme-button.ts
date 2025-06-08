@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { ThemeService } from 'apps/frontend/src/app/core/services/theme.service';
-import { SvgIcon } from 'apps/frontend/src/app/shared/directives';
-import { ICON_NAME } from 'apps/frontend/src/app/shared/directives/svg';
+import { ThemeService } from '../../../../core/services/theme.service';
+import { ICON_NAME } from '../../../../shared/directives/svg';
+import { SvgIconDirective } from '../../../../shared/directives/svg/svg-icon';
 
 @Component({
   selector: 'app-theme-button',
-  imports: [SvgIcon],
+  imports: [SvgIconDirective],
   template: `
     <button
       class="fixed top-4 right-4 z-50 bg-gray-200 rounded-full transition-colors duration-300 w-12 h-12 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -30,7 +30,7 @@ import { ICON_NAME } from 'apps/frontend/src/app/shared/directives/svg';
     </button>
   `,
 })
-export class ThemeButton {
+export class ThemeButtonComponent {
   protected readonly themeService = inject(ThemeService);
 
   protected readonly iconName = ICON_NAME;

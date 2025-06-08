@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { SvgIcon } from 'apps/frontend/src/app/shared/directives';
-import { ICON_NAME } from 'apps/frontend/src/app/shared/directives/svg';
+import { SvgIconDirective } from '../../../../shared/directives/svg/svg-icon';
+import { ICON_NAME } from '../../../../shared/directives/svg';
 
 @Component({
   selector: 'app-social-login',
-  imports: [SvgIcon],
+  imports: [SvgIconDirective],
   template: `
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <button
@@ -35,7 +35,7 @@ import { ICON_NAME } from 'apps/frontend/src/app/shared/directives/svg';
     </div>
   `,
 })
-export class SocialLogin {
+export class SocialLoginComponent {
   protected readonly iconName = ICON_NAME;
 
   handleSocialLogin(provider: 'google' | 'github'): void {

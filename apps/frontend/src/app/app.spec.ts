@@ -1,5 +1,5 @@
+import { AppComponent } from './app.component';
 import { TestBed } from '@angular/core/testing';
-import { App } from './app';
 import { RouterModule } from '@angular/router';
 import { ThemeService } from './core/services/theme.service';
 import { PLATFORM_ID } from '@angular/core';
@@ -20,13 +20,13 @@ describe('App', () => {
     });
 
     await TestBed.configureTestingModule({
-      imports: [App, RouterModule.forRoot([])],
+      imports: [AppComponent, RouterModule.forRoot([])],
       providers: [ThemeService, { provide: PLATFORM_ID, useValue: 'browser' }],
     }).compileComponents();
   });
 
   it(`should have as title 'Devs Who Run'`, () => {
-    const fixture = TestBed.createComponent(App);
+    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('Devs Who Run');
   });

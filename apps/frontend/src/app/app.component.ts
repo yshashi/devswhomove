@@ -7,7 +7,7 @@ import { ThemeService } from './core/services/theme.service';
   selector: 'app-root',
   templateUrl: './app.html',
 })
-export class App {
+export class AppComponent {
   title = 'Devs Who Run';
   public readonly themeService = inject(ThemeService);
 }

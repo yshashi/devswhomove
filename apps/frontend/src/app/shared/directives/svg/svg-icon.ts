@@ -12,8 +12,8 @@ import { Icon } from './types';
 @Directive({
   selector: '[appSvgIcon]',
 })
-export class SvgIcon implements OnInit {
-  iconName = input<Icon>('google');
+export class SvgIconDirective implements OnInit {
+  iconName = input.required<Icon>();
   iconClass = input<string>('');
   fill = input<string>('currentColor');
 
