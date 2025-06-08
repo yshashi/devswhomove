@@ -29,6 +29,11 @@ export class SvgIconDirective implements OnInit {
     const svgString = SVG_ICONS[this.iconName()];
     const parser = new DOMParser();
     const doc = parser.parseFromString(svgString, 'image/svg+xml');
+    const parseError = doc.querySelector('parsererror');
+    if (parseError) {
+      console.error(`Failed to parse SVG for icon: ${this.iconName()}`, parseError);
+      return;
+    }
     const svgElement = doc.documentElement;
 
     if (this.iconClass()) {
@@ -39,6 +44,12 @@ export class SvgIconDirective implements OnInit {
         }
       });
     }
+    const fillableElements = svgElement.querySelectorAll(
+      'path, rect, circle, ellipse, polygon, polyline'
+    );
+    fillableElements.forEach((element) => {
+      element.setAttribute('fill', this.fill());
+    });
 
     const paths = svgElement.querySelectorAll('path');
     paths.forEach((path) => {
