@@ -48,7 +48,11 @@ import { ICON_NAME } from 'apps/frontend/src/app/shared/directives/svg';
                   rel="noopener noreferrer"
                 >
                   Discord
-                  <span appSvgIcon [iconName]="iconName.discord" iconClass="w-5 h-5 ml-1"></span>
+                  <span
+                    appSvgIcon
+                    [iconName]="iconName.discord"
+                    iconClass="w-5 h-5 ml-1"
+                  ></span>
                 </a>
               </li>
               <li>
@@ -59,7 +63,11 @@ import { ICON_NAME } from 'apps/frontend/src/app/shared/directives/svg';
                   rel="noopener noreferrer"
                 >
                   GitHub
-                  <span appSvgIcon [iconName]="iconName.github" iconClass="w-5 h-5 ml-1"></span>
+                  <span
+                    appSvgIcon
+                    [iconName]="iconName.github"
+                    iconClass="w-5 h-5 ml-1"
+                  ></span>
                 </a>
               </li>
             </ul>

@@ -10,15 +10,7 @@ import { testimonials, aboutDetails, features } from './home-constants';
 
 @Component({
   selector: 'app-home',
-  imports: [
-    Header,
-    Cta,
-    About,
-    Testimonials,
-    Features,
-    Footer,
-    ThemeButton,
-  ],
+  imports: [Header, Cta, About, Testimonials, Features, Footer, ThemeButton],
   template: `
     <app-theme-button />
     <app-header />

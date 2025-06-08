@@ -40,6 +40,5 @@ import { Feature } from '../../types.';
   `,
 })
 export class Features {
-features = input<Feature[]>()
+  features = input<Feature[]>();
 }
-

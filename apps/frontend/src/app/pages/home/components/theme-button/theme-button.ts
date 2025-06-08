@@ -15,9 +15,17 @@ import { ICON_NAME } from 'apps/frontend/src/app/shared/directives/svg';
       (click)="toggleTheme()"
     >
       @if (themeService.isDarkMode()) {
-      <span appSvgIcon [iconName]="iconName.sun" iconClass="w-5 h-5 m-auto text-gray-800 dark:text-gray-200"></span>
+      <span
+        appSvgIcon
+        [iconName]="iconName.sun"
+        iconClass="w-5 h-5 m-auto text-gray-800 dark:text-gray-200"
+      ></span>
       } @else {
-      <span appSvgIcon [iconName]="iconName.moon" iconClass="w-5 h-5 m-auto text-gray-800 dark:text-gray-200"></span>
+      <span
+        appSvgIcon
+        [iconName]="iconName.moon"
+        iconClass="w-5 h-5 m-auto text-gray-800 dark:text-gray-200"
+      ></span>
       }
     </button>
   `,

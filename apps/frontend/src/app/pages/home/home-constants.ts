@@ -1,4 +1,4 @@
-import { AboutDetail, Feature, Testimonial } from "./types.";
+import { AboutDetail, Feature, Testimonial } from './types.';
 
 export const testimonials: Testimonial[] = [
   {
@@ -23,7 +23,6 @@ export const testimonials: Testimonial[] = [
     avatar: 'https://avatars.githubusercontent.com/u/57962747?v=4',
   },
 ];
-
 
 export const aboutDetails: AboutDetail[] = [
   {

@@ -1,4 +1,11 @@
-import { Directive, ElementRef, inject, input, OnInit, Renderer2 } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  inject,
+  input,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 import { SVG_ICONS } from './svg-icon-constants';
 import { Icon } from './types';
 
@@ -26,7 +33,7 @@ export class SvgIcon implements OnInit {
 
     if (this.iconClass()) {
       const classes = this.iconClass().split(' ');
-      classes.forEach(className => {
+      classes.forEach((className) => {
         if (className) {
           this.renderer.addClass(svgElement, className);
         }
@@ -34,7 +41,7 @@ export class SvgIcon implements OnInit {
     }
 
     const paths = svgElement.querySelectorAll('path');
-    paths.forEach(path => {
+    paths.forEach((path) => {
       path.setAttribute('fill', this.fill());
     });
 

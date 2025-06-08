@@ -1,4 +1,4 @@
-import { Icon } from "./types";
+import { Icon } from './types';
 
 export const ICON_NAME = {
   google: 'google',
@@ -7,7 +7,7 @@ export const ICON_NAME = {
   moon: 'moon',
   smile: 'smile',
   discord: 'discord',
-}
+};
 
 export const SVG_ICONS: { [key: Icon]: string } = {
   [ICON_NAME.google]: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
