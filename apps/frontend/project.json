@@ -23,6 +23,49 @@
         "port": 4200,
         "spa": true
       }
+    },
+    "server": {
+      "dependsOn": ["build"],
+      "executor": "@nx/angular:webpack-server",
+      "options": {
+        "outputPath": "dist/apps/frontend/server",
+        "main": "apps/frontend/src/server.ts",
+        "tsConfig": "apps/frontend/tsconfig.server.json"
+      },
+      "configurations": {},
+      "defaultConfiguration": "production"
+    },
+    "serve-ssr": {
+      "continuous": true,
+      "executor": "@angular-devkit/build-angular:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "devswhorun-frontend:build:development",
+          "serverTarget": "devswhorun-frontend:server:development"
+        },
+        "production": {
+          "browserTarget": "devswhorun-frontend:build:production",
+          "serverTarget": "devswhorun-frontend:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@angular-devkit/build-angular:prerender",
+      "options": {
+        "routes": ["/"]
+      },
+      "configurations": {
+        "development": {
+          "browserTarget": "devswhorun-frontend:build:development",
+          "serverTarget": "devswhorun-frontend:server:development"
+        },
+        "production": {
+          "browserTarget": "devswhorun-frontend:build:production",
+          "serverTarget": "devswhorun-frontend:server:production"
+        }
+      },
+      "defaultConfiguration": "production"
     }
   }
 }
