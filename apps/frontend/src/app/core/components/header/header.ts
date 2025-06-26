@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { SocialLoginComponent } from '../social-login/social-login';
+import { SocialLoginComponent } from '../../../pages/landing/components/social-login/social-login';
 
 type DiscordStats = {
   total_members: number;

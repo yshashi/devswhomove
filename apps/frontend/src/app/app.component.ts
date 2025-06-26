@@ -1,9 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ThemeService } from './core/services/theme.service';
+import { HeaderComponent } from "./core/components/header/header";
+import { FooterComponent } from "./core/components/footer/footer";
 
 @Component({
-  imports: [RouterModule],
+  imports: [RouterModule, HeaderComponent, FooterComponent],
   selector: 'app-root',
   templateUrl: './app.html',
 })

@@ -4,8 +4,8 @@ export const appRoutes: Route[] = [
   ...createEventRoutes,
   {
     path: '',
-    loadComponent: () => import('./pages/home/home.component'),
+    loadComponent: () => import('./pages/landing/landing.component'),
   },
-  { path: 'home', redirectTo: '', pathMatch: 'full' },
+  { path: 'landing', redirectTo: '', pathMatch: 'full' },
   { path: '**', redirectTo: '' },
 ];
