@@ -22,7 +22,11 @@ describe('App', () => {
 
     await TestBed.configureTestingModule({
       imports: [AppComponent, RouterModule.forRoot([])],
-      providers: [ThemeService, { provide: PLATFORM_ID, useValue: 'browser' }, provideHttpClient()],
+      providers: [
+        ThemeService,
+        { provide: PLATFORM_ID, useValue: 'browser' },
+        provideHttpClient(),
+      ],
     }).compileComponents();
   });
 
