@@ -3,6 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { ThemeService } from './core/services/theme.service';
 import { PLATFORM_ID } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('App', () => {
   beforeEach(async () => {
@@ -21,7 +22,7 @@ describe('App', () => {
 
     await TestBed.configureTestingModule({
       imports: [AppComponent, RouterModule.forRoot([])],
-      providers: [ThemeService, { provide: PLATFORM_ID, useValue: 'browser' }],
+      providers: [ThemeService, { provide: PLATFORM_ID, useValue: 'browser' }, provideHttpClient()],
     }).compileComponents();
   });
 
