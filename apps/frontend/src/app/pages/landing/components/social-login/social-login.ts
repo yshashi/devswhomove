@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ICON_NAME } from '../../../../shared/directives/svg/svg-icon-constants';
 import { SvgIconDirective } from '../../../../shared/directives/svg/svg-icon';
-import { ICON_NAME } from '../../../../shared/directives/svg';
+import { AuthApiService } from '../../../../shared/services/auth-api';
 
 @Component({
   selector: 'app-social-login',
+  standalone: true,
   imports: [SvgIconDirective],
   template: `
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <div class="flex gap-3 align-center justify-center">
       <button
         (click)="handleSocialLogin('google')"
-        class="flex items-center justify-center gap-2 px-6 py-3 font-semibold text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm transition-all hover:-translate-y-1 hover:shadow-md dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700"
+        class="flex items-center justify-center gap-2 px-6 py-3 font-semibold text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700"
         aria-label="Sign in with Google"
       >
         <span
@@ -18,11 +20,12 @@ import { ICON_NAME } from '../../../../shared/directives/svg';
           fill="#4285F4"
           iconClass="w-5 h-5"
         ></span>
-        Sign in with Google
+        <span class="hidden sm:block">Sign in with Google</span>
       </button>
       <button
         (click)="handleSocialLogin('github')"
-        class="flex items-center justify-center gap-2 px-6 py-3 font-semibold text-white bg-gray-800 rounded-md shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600"
+        [disabled]="isLoading"
+        class="flex items-center justify-center gap-2 px-6 py-3 font-semibold text-white bg-gray-800 rounded-md shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Sign in with GitHub"
       >
         <span
@@ -30,19 +33,40 @@ import { ICON_NAME } from '../../../../shared/directives/svg';
           [iconName]="iconName.github"
           iconClass="w-5 h-5"
         ></span>
-        Sign in with GitHub
+        <span class="hidden sm:block">{{
+          isLoading ? 'Connecting...' : 'Sign in with GitHub'
+        }}</span>
       </button>
     </div>
   `,
 })
 export class SocialLoginComponent {
   protected readonly iconName = ICON_NAME;
+  private authApi = inject(AuthApiService);
+  protected isLoading = false;
 
   handleSocialLogin(provider: 'google' | 'github'): void {
-    alert(
-      `${
-        provider.charAt(0).toUpperCase() + provider.slice(1)
-      } login feature coming soon!`
-    );
+    if (provider === 'github') {
+      this.handleGitHubLogin();
+    } else {
+      alert('Google login feature coming soon!');
+    }
+  }
+
+  private handleGitHubLogin(): void {
+    this.isLoading = true;
+
+    this.authApi.initiateGitHubLogin().subscribe({
+      next: (response) => {
+        if (response.success) {
+          console.log('Redirecting to GitHub OAuth...');
+        }
+      },
+      error: (error) => {
+        console.error('GitHub login failed:', error);
+        alert('Failed to initiate GitHub login. Please try again.');
+        this.isLoading = false;
+      },
+    });
   }
 }

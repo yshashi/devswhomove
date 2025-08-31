@@ -21,8 +21,11 @@
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
+    "@nestjs/config": "^3.1.1",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
+    "appwrite": "^16.0.2",
+    "node-appwrite": "^18.0.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1"
   },

@@ -2,7 +2,6 @@ import { Component, signal } from '@angular/core';
 import { SvgIconDirective } from '../../../shared/directives/svg/svg-icon';
 import { ICON_NAME } from '../../../shared/directives/svg';
 
-
 @Component({
   selector: 'app-footer',
   imports: [SvgIconDirective],

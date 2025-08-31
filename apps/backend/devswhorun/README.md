@@ -36,12 +36,13 @@ $ npm install
 
 ```bash
 # development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
+$ cd apps/backend/devswhorun
+$ npm install  # Install dependencies first
+$ npm run start:dev  # Development mode with hot reload
+$ npm run start:debug # Debug mode with debugger
 
 # production mode
+$ cd apps/backend/devswhorun
 $ npm run start:prod
 ```
 
@@ -49,12 +50,15 @@ $ npm run start:prod
 
 ```bash
 # unit tests
+$ cd apps/backend/devswhorun
 $ npm run test
 
 # e2e tests
+$ cd apps/backend/devswhorun
 $ npm run test:e2e
 
 # test coverage
+$ cd apps/backend/devswhorun
 $ npm run test:cov
 ```
 
