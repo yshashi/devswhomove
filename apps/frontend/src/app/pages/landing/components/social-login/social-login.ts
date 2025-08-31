@@ -5,7 +5,6 @@ import { AuthApiService } from '../../../../shared/services/auth-api';
 
 @Component({
   selector: 'app-social-login',
-  standalone: true,
   imports: [SvgIconDirective],
   template: `
     <div class="flex gap-3 align-center justify-center">

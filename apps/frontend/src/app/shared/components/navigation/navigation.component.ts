@@ -5,11 +5,9 @@ import { AuthApiService } from '../../services/auth-api';
 
 @Component({
   selector: 'app-navigation',
-  standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
-    @let user = this.authApi.currentUser();
-    @if (user) {
+    @let user = this.authApi.currentUser(); @if (user) {
     <nav
       class="overflow-hidden relative bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700"
     >

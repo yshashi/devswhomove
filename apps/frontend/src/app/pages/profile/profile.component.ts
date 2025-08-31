@@ -5,8 +5,7 @@ import { AuthApiService } from '../../shared/services/auth-api';
   selector: 'app-profile',
   imports: [],
   template: `
-    @let user = this.authApi.currentUser();
-    @if (user) {
+    @let user = this.authApi.currentUser(); @if (user) {
     <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div

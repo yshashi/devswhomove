@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-error',
-  standalone: true,
   template: `
     <div
       class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900"

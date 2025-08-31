@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 @Component({
   selector: 'app-dashboard',
-  standalone: true,
   imports: [CommonModule],
   template: `
     <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -18,6 +16,4 @@ import { CommonModule } from '@angular/common';
     </main>
   `,
 })
-export class DashboardComponent {
-
-}
+export class DashboardComponent {}

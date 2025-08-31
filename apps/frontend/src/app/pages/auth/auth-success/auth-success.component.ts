@@ -4,7 +4,6 @@ import { AuthApiService } from '../../../shared/services/auth-api';
 
 @Component({
   selector: 'app-auth-success',
-  standalone: true,
   template: `
     <div
       class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900"
