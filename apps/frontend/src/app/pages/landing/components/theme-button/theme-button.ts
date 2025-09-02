@@ -8,7 +8,8 @@ import { SvgIconDirective } from '../../../../shared/directives/svg/svg-icon';
   imports: [SvgIconDirective],
   template: `
     <button
-      class="fixed top-4 right-4 z-50 bg-gray-200 rounded-full transition-colors duration-300 w-12 h-12 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      [style]="{ top: '0.5rem', right: '0.5rem' }"
+      class="fixed z-50 bg-gray-200 rounded-full transition-colors duration-300 w-12 h-12 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
       aria-label="Toggle dark mode"
       role="switch"
       [attr.aria-checked]="themeService.isDarkMode()"
