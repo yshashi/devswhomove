@@ -5,6 +5,13 @@ module.exports = {
   output: {
     path: join(__dirname, '../../dist/backend/devswhorun-api'),
   },
+  resolve: {
+    extensions: ['.ts', '.js'],
+    modules: [
+      join(__dirname, '../../node_modules'),
+      'node_modules'
+    ]
+  },
   plugins: [
     new NxAppWebpackPlugin({
       target: 'node',

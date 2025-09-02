@@ -4,7 +4,11 @@
   "license": "MIT",
   "packageManager": "yarn@1.22.19",
   "scripts": {
-    "nx": "nx"
+    "nx": "nx",
+    "build": "nx build devswhorun-api",
+    "start": "node dist/backend/devswhorun-api/main.js",
+    "build:prod": "nx build devswhorun-api --configuration=production",
+    "dev": "nx serve devswhorun-api"
   },
   "private": true,
   "dependencies": {
