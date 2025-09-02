@@ -21,14 +21,14 @@ export class AuthController {
 
   @Post('github/login')
   async initiateGitHubLogin(
-    @Body() createOAuthUrlDto: CreateOAuthUrlDto,
+    @Body() createOAuthUrlDto: CreateOAuthUrlDto
   ): Promise<AuthResponseDto> {
     try {
       const { successUrl, failureUrl } = createOAuthUrlDto;
 
       const oauthUrl = await this.appwriteService.createGitHubOAuthUrl(
         successUrl,
-        failureUrl,
+        failureUrl
       );
 
       return {
@@ -44,7 +44,7 @@ export class AuthController {
 
   @Post('exchange-secret')
   async exchangeSecretForSession(
-    @Body() body: { secret: string; userId: string },
+    @Body() body: { secret: string; userId: string }
   ): Promise<AuthResponseDto> {
     try {
       const { secret, userId } = body;
@@ -55,7 +55,7 @@ export class AuthController {
 
       const result = await this.appwriteService.createSessionFromCallback(
         userId,
-        secret,
+        secret
       );
 
       return {
@@ -80,7 +80,7 @@ export class AuthController {
 
   @Post('profile')
   async getUserProfile(
-    @Body() userSessionDto: UserSessionDto,
+    @Body() userSessionDto: UserSessionDto
   ): Promise<AuthResponseDto> {
     try {
       const { secretToken } = userSessionDto;
@@ -110,7 +110,7 @@ export class AuthController {
 
   @Post('logout')
   async logout(
-    @Body() userSessionDto: UserSessionDto,
+    @Body() userSessionDto: UserSessionDto
   ): Promise<AuthResponseDto> {
     try {
       const { secretToken } = userSessionDto;
@@ -133,7 +133,7 @@ export class AuthController {
 
   @Post('verify')
   async verifySession(
-    @Body() userSessionDto: UserSessionDto,
+    @Body() userSessionDto: UserSessionDto
   ): Promise<AuthResponseDto> {
     try {
       const { secretToken } = userSessionDto;

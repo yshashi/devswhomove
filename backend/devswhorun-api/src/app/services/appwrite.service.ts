@@ -33,7 +33,7 @@ export class AppwriteService {
 
   async createGitHubOAuthUrl(
     successUrl: string,
-    failureUrl: string,
+    failureUrl: string
   ): Promise<string | void> {
     try {
       const sessionUrl = this.account.createOAuth2Token({
@@ -79,7 +79,7 @@ export class AppwriteService {
 
   async createSessionFromCallback(
     userId: string,
-    secret: string,
+    secret: string
   ): Promise<{ session: any; user: any }> {
     try {
       const session = await this.account.createSession(userId, secret);

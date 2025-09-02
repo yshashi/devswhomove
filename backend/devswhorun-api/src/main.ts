@@ -22,7 +22,7 @@ async function bootstrap() {
       whitelist: true,
       forbidNonWhitelisted: true,
       transform: true,
-    }),
+    })
   );
 
   const port = process.env.PORT ?? 3001;
@@ -30,4 +30,3 @@ async function bootstrap() {
   console.log(`🚀 Backend server running on http://localhost:${port}`);
 }
 bootstrap();
-
