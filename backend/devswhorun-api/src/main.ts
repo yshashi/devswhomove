@@ -1,6 +1,11 @@
+/**
+ * This is not a production server yet!
+ * This is only a minimal backend to get started.
+ */
+
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
-import { AppModule } from './app.module';
+import { AppModule } from './app/app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -25,3 +30,4 @@ async function bootstrap() {
   console.log(`🚀 Backend server running on http://localhost:${port}`);
 }
 bootstrap();
+
