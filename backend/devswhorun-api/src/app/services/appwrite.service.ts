@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { Client, Account, OAuthProvider, Users } from 'node-appwrite';
+import { Client, Account, OAuthProvider } from 'node-appwrite';
 
 @Injectable()
 export class AppwriteService {
@@ -13,12 +13,22 @@ export class AppwriteService {
   }
 
   private initializeClient(): void {
-    const endpoint = this.configService.get<string>('appwrite.endpoint');
-    const projectId = this.configService.get<string>('appwrite.projectId');
-    const apiKey = this.configService.get<string>('appwrite.apiKey');
+    const endpoint = this.configService.get<string>('appwrite.endpoint') ||
+                    this.configService.get<string>('APPWRITE_ENDPOINT') ||
+                    process.env.APPWRITE_ENDPOINT;
+    const projectId = this.configService.get<string>('appwrite.projectId') ||
+                     this.configService.get<string>('APPWRITE_PROJECT_ID') ||
+                     process.env.APPWRITE_PROJECT_ID;
+    const apiKey = this.configService.get<string>('appwrite.apiKey') ||
+                  this.configService.get<string>('APPWRITE_API_KEY') ||
+                  process.env.APPWRITE_API_KEY;
+
+    this.logger.log(`Appwrite config: endpoint=${!!endpoint}, projectId=${!!projectId}, apiKey=${!!apiKey}`);
 
     if (!endpoint || !projectId) {
-      throw new Error('Appwrite configuration is missing');
+      this.logger.warn('Appwrite configuration is missing - service will be limited');
+      // Don't throw error, just log warning for development
+      return;
     }
 
     this.client = new Client().setEndpoint(endpoint).setProject(projectId);
