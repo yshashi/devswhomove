@@ -5,7 +5,12 @@ nixPkgs = ['nodejs', 'yarn']
 cmds = ['yarn install --frozen-lockfile']
 
 [phases.build]
-cmds = ['yarn build:prod']
+cmds = [
+  'yarn build:prod',
+  'ls -la dist/',
+  'ls -la dist/backend/',
+  'ls -la dist/backend/devswhorun-api/'
+]
 
 [start]
-cmd = 'yarn start'
+cmd = 'node dist/backend/devswhorun-api/main.js'

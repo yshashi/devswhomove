@@ -5,7 +5,7 @@
     "buildCommand": "yarn install && yarn build:prod"
   },
   "deploy": {
-    "startCommand": "yarn start",
+    "startCommand": "node dist/backend/devswhorun-api/main.js",
     "healthcheckPath": "/health",
     "healthcheckTimeout": 30,
     "restartPolicyType": "ON_FAILURE",
