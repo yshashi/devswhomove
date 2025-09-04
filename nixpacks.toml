@@ -2,13 +2,10 @@
 nixPkgs = ['nodejs', 'yarn']
 
 [phases.install]
-cmds = [
-  'cp backend-package.json package.json',
-  'yarn install --frozen-lockfile'
-]
+cmds = ['yarn install --frozen-lockfile']
 
 [phases.build]
-cmds = ['yarn build']
+cmds = ['yarn build:prod']
 
 [start]
 cmd = 'yarn start'
